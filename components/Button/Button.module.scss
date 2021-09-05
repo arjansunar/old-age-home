@@ -1,0 +1,20 @@
+.base-btn {
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+}
+
+.primary {
+  @extend .base-btn;
+  background-color: var(--c-b-primary);
+  color: #52441c;
+}
+
+.outlined {
+  @extend .base-btn;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}

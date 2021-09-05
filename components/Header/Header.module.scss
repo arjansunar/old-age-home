@@ -1,0 +1,118 @@
+.header {
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  width: 100%;
+  ul,
+  li,
+  a {
+    text-decoration: none;
+    list-style: none;
+  }
+
+  font-weight: 500;
+  font-size: 14px;
+
+  background-color: var(--c-d-primary);
+  color: var(--c-t-light);
+}
+.nav {
+  height: var(--nav-height);
+  position: relative;
+  .logo {
+    font-size: 2rem;
+    line-height: var(--nav-height);
+  }
+
+  .navToggle {
+    display: none;
+  }
+  .navToggleLabel {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.5em;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    margin-left: 2em;
+
+    &:focus {
+      outline: none;
+    }
+  }
+  .navItem {
+    padding: 1em 0;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 250ms ease-in-out;
+    text-align: left;
+
+    .navItems a {
+      opacity: 0;
+      transition: opacity 150ms ease-in-out;
+      line-height: 1.5em;
+      color: inherit;
+    }
+
+    .navButtonWrapper {
+      @extend .navItems;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .navToggle:checked ~ .navItem {
+    transform: scale(1, 1);
+
+    .navItems a {
+      opacity: 1;
+      transition: opacity 250ms ease-in-out 150ms;
+    }
+  }
+
+  @media (max-width: 860px) {
+    .navItem {
+      background-color: var(--c-d-primary);
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 2em;
+    }
+  }
+  @media (min-width: 860px) {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(620px, 5fr) 1fr;
+    grid-template-areas: "a logo main s ";
+
+    .logo {
+      grid-area: logo;
+    }
+
+    .navItem {
+      grid-area: main;
+      width: 100%;
+      padding: 0 0;
+      transform: scale(1, 1);
+      display: flex;
+      column-gap: 2em;
+      justify-content: flex-end;
+      .navItems a {
+        opacity: 1;
+        line-height: var(--nav-height);
+      }
+    }
+
+    .navToggleLabel {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1100px) {
+    font-size: 15px;
+  }
+}

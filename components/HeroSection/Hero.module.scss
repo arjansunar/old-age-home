@@ -1,0 +1,36 @@
+.hero {
+  margin-top: var(--nav-height);
+  background: var(--c-l-primary);
+  min-height: 80vh;
+
+  color: var(--c-t-light);
+
+  .textWrapper {
+    max-width: 515px;
+    .tag {
+      font-size: 18px;
+      font-weight: 400;
+    }
+    .title {
+      margin-top: 1rem;
+      font-family: var(--ff-playfair);
+      font-size: 4rem;
+      line-height: 4.5rem;
+      font-weight: 400;
+    }
+
+    .subtitle {
+      margin-top: 2rem;
+      font-weight: 400;
+      font-size: 1.5rem;
+    }
+
+    .btnWrapper {
+      margin-top: 1.5rem;
+      display: flex;
+      column-gap: 10%;
+    }
+  }
+  //   display: grid;
+  //   grid-template-columns: 1fr minmax(800px 6fr) 1fr;
+}
