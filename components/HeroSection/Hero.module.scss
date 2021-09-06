@@ -1,11 +1,15 @@
 .hero {
   margin-top: var(--nav-height);
+  // max-width: 1000px;
   background: var(--c-l-primary);
   min-height: 80vh;
-
+  padding-top: 5rem;
   color: var(--c-t-light);
-
+  display: flex;
+  justify-content: center;
+  column-gap: 5rem;
   .textWrapper {
+    margin-top: 2rem;
     max-width: 515px;
     .tag {
       font-size: 18px;
@@ -31,6 +35,17 @@
       column-gap: 10%;
     }
   }
-  //   display: grid;
-  //   grid-template-columns: 1fr minmax(800px 6fr) 1fr;
+
+  .imageWrapper {
+    max-width: 412px;
+    border-radius: 10px 100px 10px 10px;
+    overflow: hidden;
+    height: 452px;
+    position: relative;
+    box-shadow: -49px 58px 0px 1px var(--c-b-primary);
+
+    & > div {
+      height: 100%;
+    }
+  }
 }
